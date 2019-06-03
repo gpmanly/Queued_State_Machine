@@ -1,0 +1,377 @@
+
+# 1 "qsm/qsm.c"
+
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 38
+typedef signed long int int32_t;
+
+# 45
+typedef unsigned char uint8_t;
+
+# 51
+typedef unsigned int uint16_t;
+
+# 67
+typedef unsigned long int uint32_t;
+
+# 75
+typedef signed char int_least8_t;
+
+# 82
+typedef signed int int_least16_t;
+
+# 104
+typedef signed long int int_least32_t;
+
+# 111
+typedef unsigned char uint_least8_t;
+
+# 117
+typedef unsigned int uint_least16_t;
+
+# 136
+typedef unsigned long int uint_least32_t;
+
+# 145
+typedef signed char int_fast8_t;
+
+# 152
+typedef signed int int_fast16_t;
+
+# 174
+typedef signed long int int_fast32_t;
+
+# 181
+typedef unsigned char uint_fast8_t;
+
+# 187
+typedef unsigned int uint_fast16_t;
+
+# 206
+typedef unsigned long int uint_fast32_t;
+
+# 212
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
+typedef unsigned char bool;
+
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\__size_t.h"
+typedef unsigned size_t;
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 40 "qsm/qsm_config.h"
+typedef enum {
+FLAG_WASH,
+FLAG_DRAIN
+}mode_operation_t;
+
+typedef enum {
+FLAG_LIGHT,
+FLAG_NORMAL,
+FLAG_HEAVY
+}weight_flag_t;
+
+
+
+
+typedef enum huvent_state_e
+{
+WM_STATE_IDLE = 0,
+
+WM_STATE_MODE_WASH,
+
+WM_STATE_MODE_DRAIN,
+
+WM_STATE_WEIGHING,
+
+WM_STATE_MODE_LIGHT,
+
+WM_STATE_MODE_NORMAL,
+
+WM_STATE_MODE_HEAVY,
+
+WM_STATE_WASHING,
+
+WM_STATE_DRAINING,
+
+WM_STATE_FAULT,
+
+WM_STATE_DONE,
+
+
+QSM_STATE_MAX
+
+} qsm_state_t;
+
+
+typedef enum huvent_e
+{
+WM_EVENT_INIT = 0,
+
+WM_EVENT_BUTTON_OK,
+
+WM_EVENT_BUTTON_UP,
+
+WM_EVENT_LOAD_SENSE,
+
+WM_EVENT_WATER_LEVEL_SENSE,
+
+WM_EVENT_FAULT_SENSE,
+
+WM_EVENT_TIMER_DONE,
+
+
+QSM_EVENT_MAX
+} qsm_event_t;
+
+# 32 "qsm/qsm_queue.h"
+typedef enum qsm_queue_resp_e
+{
+QSM_QUEUE_OK = 0,
+QSM_QUEUE_EMPTY,
+QSM_QUEUE_FULL,
+} qsm_queue_resp_t;
+
+
+typedef struct qsm_queue_s
+{
+uint8_t head;
+uint8_t tail;
+uint8_t buffer[20];
+uint8_t buffer_len;
+qsm_queue_resp_t status;
+} qsm_queue_t;
+
+void qsm_queue_init( qsm_queue_t* b);
+void qsm_queue_reset( qsm_queue_t * b);
+qsm_queue_resp_t qsm_queue_get( qsm_queue_t * b, uint8_t* byte_out);
+qsm_queue_resp_t qsm_queue_put( qsm_queue_t * b, uint8_t data_byte);
+
+# 32 "qsm/qsm.h"
+typedef enum qsm_resp_s
+{
+QSM_OK = 0,
+QSM_FULL,
+} qsm_resp_t;
+
+void qsm_init(void);
+void qsm_engine(void);
+
+qsm_resp_t qsm_post_event( qsm_event_t event);
+
+qsm_state_t qsm_get_state( void );
+
+void qsm_set_state( qsm_state_t new_state );
+
+
+
+mode_operation_t get_mode (void);
+
+void set_mode (mode_operation_t new_mode);
+
+weight_flag_t get_weight_flag (void);
+
+void set_weight_flag (weight_flag_t new_weight_flag);
+
+# 34 "qsm/qsm_event_handler.h"
+void WM_HANDLER_INIT(void);
+void WM_HANDLER_NONE(void);
+void WM_HANDLER_TOGGLE_MODE(void);
+void WM_HANDLER_START_WEIGHING(void);
+void WM_HANDLER_LOAD_SENSE(void);
+void WM_HANDLER_WATER_LEVEL_SENSE(void);
+void WM_HANDLER_FAULT_SENSE(void);
+void WM_HANDLER_TIMER_DONE(void);
+
+
+void WM_HANDLER_START_RUNNING(void);
+
+# 38 "qsm/qsm.c"
+static qsm_state_t qsm_state = WM_STATE_IDLE;
+static qsm_queue_t qsm_queue;
+
+
+static mode_operation_t mode = FLAG_WASH;
+static weight_flag_t weight_flag = FLAG_LIGHT;
+
+
+typedef struct qsm_lookup_table_e
+{
+qsm_event_t event;
+
+# 53
+void (*event_handler[QSM_STATE_MAX]) ();
+} qsm_lookup_table_t;
+
+# 76
+const qsm_lookup_table_t qsm_lookup_table [] =
+{
+
+
+
+
+{WM_EVENT_INIT, {WM_HANDLER_INIT, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE} },
+{WM_EVENT_BUTTON_OK, {WM_HANDLER_NONE, WM_HANDLER_START_WEIGHING, WM_HANDLER_START_WEIGHING, WM_HANDLER_NONE, WM_HANDLER_START_RUNNING, WM_HANDLER_START_RUNNING, WM_HANDLER_START_RUNNING, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_START_RUNNING, WM_HANDLER_INIT} },
+{WM_EVENT_BUTTON_UP, {WM_HANDLER_TOGGLE_MODE, WM_HANDLER_TOGGLE_MODE, WM_HANDLER_TOGGLE_MODE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE} },
+{WM_EVENT_LOAD_SENSE, {WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_LOAD_SENSE, WM_HANDLER_LOAD_SENSE, WM_HANDLER_LOAD_SENSE, WM_HANDLER_LOAD_SENSE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE} },
+{WM_EVENT_WATER_LEVEL_SENSE,{WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_WATER_LEVEL_SENSE, WM_HANDLER_NONE, WM_HANDLER_NONE} },
+{WM_EVENT_FAULT_SENSE, {WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_FAULT_SENSE, WM_HANDLER_FAULT_SENSE, WM_HANDLER_FAULT_SENSE, WM_HANDLER_NONE} },
+{WM_EVENT_TIMER_DONE, {WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_TIMER_DONE, WM_HANDLER_TIMER_DONE, WM_HANDLER_NONE, WM_HANDLER_NONE} }
+};
+
+void qsm_init(void)
+{
+qsm_queue_init( &qsm_queue );
+qsm_queue_reset( &qsm_queue );
+qsm_state = WM_STATE_IDLE;
+}
+
+qsm_resp_t qsm_post_event( qsm_event_t event)
+{
+if( QSM_QUEUE_OK != qsm_queue_put( &qsm_queue, event ) )
+{
+return QSM_FULL;
+}
+return QSM_OK;
+}
+
+qsm_state_t qsm_get_state( void )
+{
+return qsm_state;
+}
+
+void qsm_set_state( qsm_state_t new_state )
+{
+qsm_state = new_state;
+return;
+}
+
+# 122
+void qsm_engine(void)
+{
+qsm_event_t event = WM_STATE_IDLE;
+qsm_queue_resp_t resp = QSM_QUEUE_OK;
+
+resp = qsm_queue_get( &qsm_queue, (uint8_t*) &event);
+
+# 134
+switch(resp)
+{
+case QSM_QUEUE_OK:
+{
+qsm_lookup_table[event].event_handler[qsm_state]();
+break;
+}
+case QSM_QUEUE_EMPTY:
+{
+
+break;
+}
+case QSM_QUEUE_FULL:
+default:
+{
+while(1);
+break;
+}
+}
+}
+
+
+mode_operation_t get_mode (void){
+return mode;
+}
+
+void set_mode (mode_operation_t new_mode){
+mode = new_mode;
+return;
+}
+
+weight_flag_t get_weight_flag (void){
+return weight_flag;
+}
+
+void set_weight_flag (weight_flag_t new_weight_flag){
+weight_flag = new_weight_flag;
+return;
+}
+

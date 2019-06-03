@@ -1,0 +1,1480 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F46K80 ]
+[d frameptr 4065 ]
+"52 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/ext_int.c
+[e E15149 huvent_e `uc
+WM_EVENT_INIT 0
+WM_EVENT_BUTTON_OK 1
+WM_EVENT_BUTTON_UP 2
+WM_EVENT_LOAD_SENSE 3
+WM_EVENT_WATER_LEVEL_SENSE 4
+WM_EVENT_FAULT_SENSE 5
+WM_EVENT_TIMER_DONE 6
+QSM_EVENT_MAX 7
+]
+[e E15159 qsm_resp_s `uc
+QSM_OK 0
+QSM_FULL 1
+]
+"82 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/adc.c
+[e E15412 . `uc
+channel_CTMU 28
+channel_Temp_diode 29
+channel_Vdd_core 30
+channel_1_024V_bandgap 31
+channel_FAULT 0
+channel_WATER 2
+channel_LOAD 1
+]
+"131
+[e E15112 huvent_e `uc
+WM_EVENT_INIT 0
+WM_EVENT_BUTTON_OK 1
+WM_EVENT_BUTTON_UP 2
+WM_EVENT_LOAD_SENSE 3
+WM_EVENT_WATER_LEVEL_SENSE 4
+WM_EVENT_FAULT_SENSE 5
+WM_EVENT_TIMER_DONE 6
+QSM_EVENT_MAX 7
+]
+[e E15122 qsm_resp_s `uc
+QSM_OK 0
+QSM_FULL 1
+]
+"130
+[e E15098 huvent_state_e `uc
+WM_STATE_IDLE 0
+WM_STATE_MODE_WASH 1
+WM_STATE_MODE_DRAIN 2
+WM_STATE_WEIGHING 3
+WM_STATE_MODE_LIGHT 4
+WM_STATE_MODE_NORMAL 5
+WM_STATE_MODE_HEAVY 6
+WM_STATE_WASHING 7
+WM_STATE_DRAINING 8
+WM_STATE_FAULT 9
+WM_STATE_DONE 10
+QSM_STATE_MAX 11
+]
+"195 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr1.c
+[e E15098 huvent_state_e `uc
+WM_STATE_IDLE 0
+WM_STATE_MODE_WASH 1
+WM_STATE_MODE_DRAIN 2
+WM_STATE_WEIGHING 3
+WM_STATE_MODE_LIGHT 4
+WM_STATE_MODE_NORMAL 5
+WM_STATE_MODE_HEAVY 6
+WM_STATE_WASHING 7
+WM_STATE_DRAINING 8
+WM_STATE_FAULT 9
+WM_STATE_DONE 10
+QSM_STATE_MAX 11
+]
+"176 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr0.c
+[e E15112 huvent_e `uc
+WM_EVENT_INIT 0
+WM_EVENT_BUTTON_OK 1
+WM_EVENT_BUTTON_UP 2
+WM_EVENT_LOAD_SENSE 3
+WM_EVENT_WATER_LEVEL_SENSE 4
+WM_EVENT_FAULT_SENSE 5
+WM_EVENT_TIMER_DONE 6
+QSM_EVENT_MAX 7
+]
+[e E15122 qsm_resp_s `uc
+QSM_OK 0
+QSM_FULL 1
+]
+"38 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\qsm/qsm.c
+[e E95 huvent_state_e `uc
+WM_STATE_IDLE 0
+WM_STATE_MODE_WASH 1
+WM_STATE_MODE_DRAIN 2
+WM_STATE_WEIGHING 3
+WM_STATE_MODE_LIGHT 4
+WM_STATE_MODE_NORMAL 5
+WM_STATE_MODE_HEAVY 6
+WM_STATE_WASHING 7
+WM_STATE_DRAINING 8
+WM_STATE_FAULT 9
+WM_STATE_DONE 10
+QSM_STATE_MAX 11
+]
+"39
+[e E119 qsm_queue_resp_e `uc
+QSM_QUEUE_OK 0
+QSM_QUEUE_EMPTY 1
+QSM_QUEUE_FULL 2
+]
+"42
+[e E86 . `uc
+FLAG_WASH 0
+FLAG_DRAIN 1
+]
+"43
+[e E90 . `uc
+FLAG_LIGHT 0
+FLAG_NORMAL 1
+FLAG_HEAVY 2
+]
+"76
+[e E109 huvent_e `uc
+WM_EVENT_INIT 0
+WM_EVENT_BUTTON_OK 1
+WM_EVENT_BUTTON_UP 2
+WM_EVENT_LOAD_SENSE 3
+WM_EVENT_WATER_LEVEL_SENSE 4
+WM_EVENT_FAULT_SENSE 5
+WM_EVENT_TIMER_DONE 6
+QSM_EVENT_MAX 7
+]
+"99
+[e E141 qsm_resp_s `uc
+QSM_OK 0
+QSM_FULL 1
+]
+"41 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\qsm/qsm_event_handler.c
+[e E15289 . `uc
+channel_CTMU 28
+channel_Temp_diode 29
+channel_Vdd_core 30
+channel_1_024V_bandgap 31
+channel_FAULT 0
+channel_WATER 2
+channel_LOAD 1
+]
+"47
+[e E72 huvent_state_e `uc
+WM_STATE_IDLE 0
+WM_STATE_MODE_WASH 1
+WM_STATE_MODE_DRAIN 2
+WM_STATE_WEIGHING 3
+WM_STATE_MODE_LIGHT 4
+WM_STATE_MODE_NORMAL 5
+WM_STATE_MODE_HEAVY 6
+WM_STATE_WASHING 7
+WM_STATE_DRAINING 8
+WM_STATE_FAULT 9
+WM_STATE_DONE 10
+QSM_STATE_MAX 11
+]
+"80
+[e E63 . `uc
+FLAG_WASH 0
+FLAG_DRAIN 1
+]
+"101
+[e E67 . `uc
+FLAG_LIGHT 0
+FLAG_NORMAL 1
+FLAG_HEAVY 2
+]
+"40 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\qsm/qsm_queue.c
+[e E109 qsm_queue_resp_e `uc
+QSM_QUEUE_OK 0
+QSM_QUEUE_EMPTY 1
+QSM_QUEUE_FULL 2
+]
+"79 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\motordriver.c
+[e E15107 huvent_state_e `uc
+WM_STATE_IDLE 0
+WM_STATE_MODE_WASH 1
+WM_STATE_MODE_DRAIN 2
+WM_STATE_WEIGHING 3
+WM_STATE_MODE_LIGHT 4
+WM_STATE_MODE_NORMAL 5
+WM_STATE_MODE_HEAVY 6
+WM_STATE_WASHING 7
+WM_STATE_DRAINING 8
+WM_STATE_FAULT 9
+WM_STATE_DONE 10
+QSM_STATE_MAX 11
+]
+"77
+[e E15098 . `uc
+FLAG_WASH 0
+FLAG_DRAIN 1
+]
+"75
+[e E15102 . `uc
+FLAG_LIGHT 0
+FLAG_NORMAL 1
+FLAG_HEAVY 2
+]
+"464 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\memset.c
+[v _memset memset `(*.39v  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"3 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\capture_tb.c
+[v _capture_tb capture_tb `(v  1 e 1 0 ]
+"7 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\led_driver.c
+[v _led_all_on led_all_on `(v  1 e 1 0 ]
+"57 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"58 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+"100
+[v _ADC_GetConversionResult ADC_GetConversionResult `(ui  1 e 2 0 ]
+"128
+[v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]
+"59 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/ccp5.c
+[v _CCP5_Initialize CCP5_Initialize `(v  1 e 1 0 ]
+"82
+[v _CCP5_CaptureISR CCP5_CaptureISR `(v  1 e 1 0 ]
+"97
+[v _CCP5_CallBack CCP5_CallBack `(v  1 e 1 0 ]
+"105
+[v _get_frequency get_frequency `(ui  1 e 2 0 ]
+"63 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/epwm1.c
+[v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 1 0 ]
+"90
+[v _EPWM1_LoadDutyValue EPWM1_LoadDutyValue `(v  1 e 1 0 ]
+"55 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+"77
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+"97
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+"111
+[v _putch putch `(v  1 e 1 0 ]
+"48 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/ext_int.c
+[v _INT1_ISR INT1_ISR `(v  1 e 1 0 ]
+"64
+[v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
+"76
+[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
+"83
+[v _INT1_DefaultInterruptHandler INT1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"90
+[v _INT0_ISR INT0_ISR `(v  1 e 1 0 ]
+"106
+[v _INT0_CallBack INT0_CallBack `(v  1 e 1 0 ]
+"118
+[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
+"125
+[v _INT0_DefaultInterruptHandler INT0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"139
+[v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
+"51 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"81
+[v _INTERRUPT_InterruptManagerHigh INTERRUPT_InterruptManagerHigh `II(v  1 e 1 0 ]
+"111 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"128
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"52 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"69 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"98
+[v _TMR0_StartTimer TMR0_StartTimer `(v  1 e 1 0 ]
+"104
+[v _TMR0_StopTimer TMR0_StopTimer `(v  1 e 1 0 ]
+[v i2_TMR0_StopTimer TMR0_StopTimer `(v  1 e 1 0 ]
+"126
+[v _TMR0_Reload TMR0_Reload `(v  1 e 1 0 ]
+"133
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+"156
+[v _TMR0_CallBack TMR0_CallBack `(v  1 e 1 0 ]
+"166
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+"170
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"185
+[v _set_count_m set_count_m `(v  1 e 1 0 ]
+"193
+[v _set_duration_m set_duration_m `(v  1 e 1 0 ]
+"197
+[v _get_out get_out `(uc  1 e 1 0 ]
+"201
+[v _set_out set_out `(v  1 e 1 0 ]
+"63 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"95
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
+"160
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+"181
+[v _TMR1_CallBack TMR1_CallBack `(v  1 e 1 0 ]
+"190
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+"194
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"61 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"81
+[v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 1 0 ]
+"65 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr3.c
+[v _TMR3_Initialize TMR3_Initialize `(v  1 e 1 0 ]
+"97
+[v _TMR3_StartTimer TMR3_StartTimer `(v  1 e 1 0 ]
+"103
+[v _TMR3_StopTimer TMR3_StopTimer `(v  1 e 1 0 ]
+"145
+[v _TMR3_Reload TMR3_Reload `(v  1 e 1 0 ]
+"162
+[v _TMR3_ISR TMR3_ISR `(v  1 e 1 0 ]
+"183
+[v _TMR3_CallBack TMR3_CallBack `(v  1 e 1 0 ]
+"192
+[v _TMR3_SetInterruptHandler TMR3_SetInterruptHandler `(v  1 e 1 0 ]
+"196
+[v _TMR3_DefaultInterruptHandler TMR3_DefaultInterruptHandler `(v  1 e 1 0 ]
+"201
+[v _get_count_s get_count_s `(uc  1 e 1 0 ]
+"205
+[v _set_count_s set_count_s `(v  1 e 1 0 ]
+"4 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\motordriver.c
+[v _motor_forward motor_forward `(v  1 e 1 0 ]
+"8
+[v _motor_reverse motor_reverse `(v  1 e 1 0 ]
+"12
+[v _motor_off motor_off `(v  1 e 1 0 ]
+"16
+[v _motor_on motor_on `(v  1 e 1 0 ]
+"24
+[v _motor_forward_duration motor_forward_duration `(v  1 e 1 0 ]
+"40
+[v _motor_reverse_duration motor_reverse_duration `(v  1 e 1 0 ]
+"55
+[v _motor_off_duration motor_off_duration `(v  1 e 1 0 ]
+"69
+[v _run_time run_time `(v  1 e 1 0 ]
+"74
+[v _motor_run motor_run `(v  1 e 1 0 ]
+"98 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\qsm/qsm.c
+[v _qsm_post_event qsm_post_event `(E15159  1 e 1 0 ]
+"107
+[v _qsm_get_state qsm_get_state `(E15098  1 e 1 0 ]
+"112
+[v _qsm_set_state qsm_set_state `(v  1 e 1 0 ]
+"156
+[v _get_mode get_mode `(E86  1 e 1 0 ]
+"160
+[v _set_mode set_mode `(v  1 e 1 0 ]
+"165
+[v _get_weight_flag get_weight_flag `(E90  1 e 1 0 ]
+"169
+[v _set_weight_flag set_weight_flag `(v  1 e 1 0 ]
+"39 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\qsm/qsm_event_handler.c
+[v _WM_HANDLER_INIT WM_HANDLER_INIT `(v  1 e 1 0 ]
+"51
+[v _WM_HANDLER_NONE WM_HANDLER_NONE `(v  1 e 1 0 ]
+"57
+[v _WM_HANDLER_FAULT_SENSE WM_HANDLER_FAULT_SENSE `(v  1 e 1 0 ]
+"64
+[v _WM_HANDLER_TIMER_DONE WM_HANDLER_TIMER_DONE `(v  1 e 1 0 ]
+"76
+[v _WM_HANDLER_TOGGLE_MODE WM_HANDLER_TOGGLE_MODE `(v  1 e 1 0 ]
+"94
+[v _WM_HANDLER_START_WEIGHING WM_HANDLER_START_WEIGHING `(v  1 e 1 0 ]
+"119
+[v _WM_HANDLER_LOAD_SENSE WM_HANDLER_LOAD_SENSE `(v  1 e 1 0 ]
+"141
+[v _WM_HANDLER_START_RUNNING WM_HANDLER_START_RUNNING `(v  1 e 1 0 ]
+"147
+[v _WM_HANDLER_WATER_LEVEL_SENSE WM_HANDLER_WATER_LEVEL_SENSE `(v  1 e 1 0 ]
+"39 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\qsm/qsm_queue.c
+[v _qsm_queue_count qsm_queue_count `(uc  1 s 1 qsm_queue_count ]
+"48
+[v _qsm_queue_isfull qsm_queue_isfull `(uc  1 s 1 qsm_queue_isfull ]
+"57
+[v _qsm_queue_isempty qsm_queue_isempty `(uc  1 s 1 qsm_queue_isempty ]
+"66
+[v _qsm_queue_get qsm_queue_get `(E119  1 e 1 0 ]
+"85
+[v _qsm_queue_put qsm_queue_put `(E119  1 e 1 0 ]
+"106
+[v _qsm_queue_reset qsm_queue_reset `(v  1 e 1 0 ]
+"121
+[v _qsm_queue_init qsm_queue_init `(v  1 e 1 0 ]
+"25859 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
+[v _CCP5CON CCP5CON `VEuc  1 e 1 @3911 ]
+"25945
+[v _CCPR5L CCPR5L `VEuc  1 e 1 @3912 ]
+"25965
+[v _CCPR5H CCPR5H `VEuc  1 e 1 @3913 ]
+"26910
+[v _WPUB WPUB `VEuc  1 e 1 @3931 ]
+"26972
+[v _ANCON1 ANCON1 `VEuc  1 e 1 @3932 ]
+"27072
+[v _ANCON0 ANCON0 `VEuc  1 e 1 @3933 ]
+"29887
+[v _SPBRGH1 SPBRGH1 `VEuc  1 e 1 @3965 ]
+"30490
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"30592
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"30704
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"30816
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"30928
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"31086
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"31143
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"31205
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"31267
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"31329
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+[s S96 . 1 `uc 1 C1TSEL 1 0 :1:0 
+`uc 1 C2TSEL 1 0 :1:1 
+`uc 1 C3TSEL 1 0 :1:2 
+`uc 1 C4TSEL 1 0 :1:3 
+`uc 1 C5TSEL 1 0 :1:4 
+]
+"31375
+[u S102 . 1 `S96 1 . 1 0 ]
+[v _CCPTMRSbits CCPTMRSbits `VES102  1 e 1 @3993 ]
+"31405
+[v _REFOCON REFOCON `VEuc  1 e 1 @3994 ]
+"31470
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+"31540
+[v _PSTR1CON PSTR1CON `VEuc  1 e 1 @3996 ]
+[s S489 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 TMR1GIE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 PSPIE 1 0 :1:7 
+]
+"31628
+[s S498 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+]
+[u S502 . 1 `S489 1 . 1 0 `S498 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES502  1 e 1 @3997 ]
+[s S122 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 TMR1GIF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"31705
+[s S131 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+]
+[u S135 . 1 `S122 1 . 1 0 `S131 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES135  1 e 1 @3998 ]
+[s S308 . 1 `uc 1 TMR1IP 1 0 :1:0 
+`uc 1 TMR2IP 1 0 :1:1 
+`uc 1 TMR1GIP 1 0 :1:2 
+`uc 1 SSPIP 1 0 :1:3 
+`uc 1 TX1IP 1 0 :1:4 
+`uc 1 RC1IP 1 0 :1:5 
+`uc 1 ADIP 1 0 :1:6 
+`uc 1 PSPIP 1 0 :1:7 
+]
+"31782
+[s S317 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TXIP 1 0 :1:4 
+`uc 1 RCIP 1 0 :1:5 
+]
+[u S321 . 1 `S308 1 . 1 0 `S317 1 . 1 0 ]
+[v _IPR1bits IPR1bits `VES321  1 e 1 @3999 ]
+[s S540 . 1 `uc 1 TMR3GIE 1 0 :1:0 
+`uc 1 TMR3IE 1 0 :1:1 
+`uc 1 HLVDIE 1 0 :1:2 
+`uc 1 BCLIE 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 OSCFIE 1 0 :1:7 
+]
+"31856
+[s S547 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LVDIE 1 0 :1:2 
+]
+[u S550 . 1 `S540 1 . 1 0 `S547 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES550  1 e 1 @4000 ]
+[s S564 . 1 `uc 1 TMR3GIF 1 0 :1:0 
+`uc 1 TMR3IF 1 0 :1:1 
+`uc 1 HLVDIF 1 0 :1:2 
+`uc 1 BCLIF 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 OSCFIF 1 0 :1:7 
+]
+"31910
+[s S571 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LVDIF 1 0 :1:2 
+]
+[u S574 . 1 `S564 1 . 1 0 `S571 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES574  1 e 1 @4001 ]
+[s S338 . 1 `uc 1 TMR3GIP 1 0 :1:0 
+`uc 1 TMR3IP 1 0 :1:1 
+`uc 1 HLVDIP 1 0 :1:2 
+`uc 1 BCLIP 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 OSCFIP 1 0 :1:7 
+]
+"31964
+[s S345 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LVDIP 1 0 :1:2 
+]
+[u S348 . 1 `S338 1 . 1 0 `S345 1 . 1 0 ]
+[v _IPR2bits IPR2bits `VES348  1 e 1 @4002 ]
+"32345
+[v _BAUDCON1 BAUDCON1 `VEuc  1 e 1 @4007 ]
+"32591
+[v _T1GCON T1GCON `VEuc  1 e 1 @4010 ]
+[s S1158 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 T1GGO_NOT_T1DONE 1 0 :1:3 
+]
+"32625
+[s S1161 . 1 `uc 1 T1GSS 1 0 :2:0 
+`uc 1 T1GVAL 1 0 :1:2 
+`uc 1 T1GGO_nT1DONE 1 0 :1:3 
+`uc 1 T1GSPM 1 0 :1:4 
+`uc 1 T1GTM 1 0 :1:5 
+`uc 1 T1GPOL 1 0 :1:6 
+`uc 1 TMR1GE 1 0 :1:7 
+]
+[s S1169 . 1 `uc 1 T1GSS0 1 0 :1:0 
+`uc 1 T1GSS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T1GGO 1 0 :1:3 
+]
+[s S1174 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_T1DONE 1 0 :1:3 
+]
+[s S1177 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 nT1DONE 1 0 :1:3 
+]
+[u S1180 . 1 `S1158 1 . 1 0 `S1161 1 . 1 0 `S1169 1 . 1 0 `S1174 1 . 1 0 `S1177 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES1180  1 e 1 @4010 ]
+"32695
+[v _RCSTA1 RCSTA1 `VEuc  1 e 1 @4011 ]
+[s S1275 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"32750
+[s S1284 . 1 `uc 1 RCD8 1 0 :1:0 
+`uc 1 . 1 0 :2:1 
+`uc 1 ADEN 1 0 :1:3 
+`uc 1 . 1 0 :2:4 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S1290 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 NOT_RC8 1 0 :1:6 
+]
+[s S1293 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 nRC8 1 0 :1:6 
+]
+[s S1296 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S1299 . 1 `uc 1 RX9D1 1 0 :1:0 
+`uc 1 OERR1 1 0 :1:1 
+`uc 1 FERR1 1 0 :1:2 
+`uc 1 ADDEN1 1 0 :1:3 
+`uc 1 CREN1 1 0 :1:4 
+`uc 1 SREN1 1 0 :1:5 
+`uc 1 RX91 1 0 :1:6 
+`uc 1 SPEN1 1 0 :1:7 
+]
+[s S1308 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[u S1311 . 1 `S1275 1 . 1 0 `S1284 1 . 1 0 `S1290 1 . 1 0 `S1293 1 . 1 0 `S1296 1 . 1 0 `S1299 1 . 1 0 `S1308 1 . 1 0 ]
+[v _RCSTA1bits RCSTA1bits `VES1311  1 e 1 @4011 ]
+"33033
+[v _TXSTA1 TXSTA1 `VEuc  1 e 1 @4012 ]
+"33321
+[v _TXREG1 TXREG1 `VEuc  1 e 1 @4013 ]
+"33359
+[v _RCREG1 RCREG1 `VEuc  1 e 1 @4014 ]
+"33397
+[v _SPBRG1 SPBRG1 `VEuc  1 e 1 @4015 ]
+"33435
+[v _T3GCON T3GCON `VEuc  1 e 1 @4016 ]
+[s S1624 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 T3GGO_NOT_T3DONE 1 0 :1:3 
+]
+"33469
+[s S1627 . 1 `uc 1 T3GSS 1 0 :2:0 
+`uc 1 T3GVAL 1 0 :1:2 
+`uc 1 T3GGO_nT3DONE 1 0 :1:3 
+`uc 1 T3GSPM 1 0 :1:4 
+`uc 1 T3GTM 1 0 :1:5 
+`uc 1 T3GPOL 1 0 :1:6 
+`uc 1 TMR3GE 1 0 :1:7 
+]
+"33469
+[s S1635 . 1 `uc 1 T3GSS0 1 0 :1:0 
+`uc 1 T3GSS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T3GGO 1 0 :1:3 
+]
+"33469
+[s S1640 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_T3DONE 1 0 :1:3 
+]
+"33469
+[s S1643 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 nT3DONE 1 0 :1:3 
+]
+"33469
+[u S1646 . 1 `S1624 1 . 1 0 `S1627 1 . 1 0 `S1635 1 . 1 0 `S1640 1 . 1 0 `S1643 1 . 1 0 ]
+"33469
+"33469
+[v _T3GCONbits T3GCONbits `VES1646  1 e 1 @4016 ]
+"33539
+[v _T3CON T3CON `VEuc  1 e 1 @4017 ]
+[s S1569 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T3SYNC 1 0 :1:2 
+]
+"33575
+[s S1572 . 1 `uc 1 TMR3ON 1 0 :1:0 
+`uc 1 RD16 1 0 :1:1 
+`uc 1 nT3SYNC 1 0 :1:2 
+`uc 1 SOSCEN 1 0 :1:3 
+`uc 1 T3CKPS 1 0 :2:4 
+`uc 1 TMR3CS 1 0 :2:6 
+]
+"33575
+[s S1579 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T3CKPS0 1 0 :1:4 
+`uc 1 T3CKPS1 1 0 :1:5 
+`uc 1 TMR3CS0 1 0 :1:6 
+`uc 1 TMR3CS1 1 0 :1:7 
+]
+"33575
+[s S1585 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SOSCEN3 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 RD163 1 0 :1:7 
+]
+"33575
+[s S1590 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 T3RD16 1 0 :1:7 
+]
+"33575
+[u S1593 . 1 `S1569 1 . 1 0 `S1572 1 . 1 0 `S1579 1 . 1 0 `S1585 1 . 1 0 `S1590 1 . 1 0 ]
+"33575
+"33575
+[v _T3CONbits T3CONbits `VES1593  1 e 1 @4017 ]
+"33657
+[v _TMR3L TMR3L `VEuc  1 e 1 @4018 ]
+"33677
+[v _TMR3H TMR3H `VEuc  1 e 1 @4019 ]
+[s S443 . 1 `uc 1 CCP3IE 1 0 :1:0 
+`uc 1 CCP4IE 1 0 :1:1 
+`uc 1 CCP5IE 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CMP1IE 1 0 :1:4 
+`uc 1 CMP2IE 1 0 :1:5 
+`uc 1 EEIE 1 0 :1:6 
+`uc 1 TMR4IE 1 0 :1:7 
+]
+"33881
+[u S452 . 1 `S443 1 . 1 0 ]
+"33881
+"33881
+[v _PIE4bits PIE4bits `VES452  1 e 1 @4022 ]
+[s S464 . 1 `uc 1 CCP3IF 1 0 :1:0 
+`uc 1 CCP4IF 1 0 :1:1 
+`uc 1 CCP5IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CMP1IF 1 0 :1:4 
+`uc 1 CMP2IF 1 0 :1:5 
+`uc 1 EEIF 1 0 :1:6 
+`uc 1 TMR4IF 1 0 :1:7 
+]
+"33938
+[u S473 . 1 `S464 1 . 1 0 ]
+"33938
+"33938
+[v _PIR4bits PIR4bits `VES473  1 e 1 @4023 ]
+[s S282 . 1 `uc 1 CCP3IP 1 0 :1:0 
+`uc 1 CCP4IP 1 0 :1:1 
+`uc 1 CCP5IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CMP1IP 1 0 :1:4 
+`uc 1 CMP2IP 1 0 :1:5 
+`uc 1 EEIP 1 0 :1:6 
+`uc 1 TMR4IP 1 0 :1:7 
+]
+"33998
+[s S291 . 1 `uc 1 CCIP3IP 1 0 :1:0 
+]
+"33998
+[u S293 . 1 `S282 1 . 1 0 `S291 1 . 1 0 ]
+"33998
+"33998
+[v _IPR4bits IPR4bits `VES293  1 e 1 @4024 ]
+"34302
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @4027 ]
+[s S2117 . 1 `uc 1 CCP1M 1 0 :4:0 
+`uc 1 DC1B 1 0 :2:4 
+`uc 1 P1M 1 0 :2:6 
+]
+"34334
+[s S2121 . 1 `uc 1 CCP1M0 1 0 :1:0 
+`uc 1 CCP1M1 1 0 :1:1 
+`uc 1 CCP1M2 1 0 :1:2 
+`uc 1 CCP1M3 1 0 :1:3 
+`uc 1 DC1B0 1 0 :1:4 
+`uc 1 DC1B1 1 0 :1:5 
+`uc 1 P1M0 1 0 :1:6 
+`uc 1 P1M1 1 0 :1:7 
+]
+"34334
+[s S2130 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 CCP1Y 1 0 :1:4 
+`uc 1 CCP1X 1 0 :1:5 
+]
+"34334
+[u S2134 . 1 `S2117 1 . 1 0 `S2121 1 . 1 0 `S2130 1 . 1 0 ]
+"34334
+"34334
+[v _CCP1CONbits CCP1CONbits `VES2134  1 e 1 @4027 ]
+"34501
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @4028 ]
+"34521
+[v _CCPR1H CCPR1H `VEuc  1 e 1 @4029 ]
+"34541
+[v _ECCP1DEL ECCP1DEL `VEuc  1 e 1 @4030 ]
+"34679
+[v _ECCP1AS ECCP1AS `VEuc  1 e 1 @4031 ]
+"34761
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+"34832
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"34936
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+[s S921 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"34981
+[s S924 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+"34981
+[s S928 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+"34981
+[s S936 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+"34981
+[s S939 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+"34981
+[s S942 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+"34981
+[s S945 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+"34981
+[s S948 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+"34981
+[u S951 . 1 `S921 1 . 1 0 `S924 1 . 1 0 `S928 1 . 1 0 `S936 1 . 1 0 `S939 1 . 1 0 `S942 1 . 1 0 `S945 1 . 1 0 `S948 1 . 1 0 ]
+"34981
+"34981
+[v _ADCON0bits ADCON0bits `VES951  1 e 1 @4034 ]
+"35068
+[v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
+"35088
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"35595
+[v _T2CON T2CON `VEuc  1 e 1 @4042 ]
+[s S156 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 T2OUTPS 1 0 :4:3 
+]
+"35616
+[s S160 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+"35616
+[u S168 . 1 `S156 1 . 1 0 `S160 1 . 1 0 ]
+"35616
+"35616
+[v _T2CONbits T2CONbits `VES168  1 e 1 @4042 ]
+"35666
+[v _PR2 PR2 `VEuc  1 e 1 @4043 ]
+"35792
+[v _TMR2 TMR2 `VEuc  1 e 1 @4044 ]
+"35812
+[v _T1CON T1CON `VEuc  1 e 1 @4045 ]
+[s S1110 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
+]
+"35844
+[s S1113 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 RD16 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 SOSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1CS 1 0 :2:6 
+]
+"35844
+[s S1120 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+`uc 1 TMR1CS0 1 0 :1:6 
+`uc 1 TMR1CS1 1 0 :1:7 
+]
+"35844
+[s S1126 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 T1RD16 1 0 :1:7 
+]
+"35844
+[u S1131 . 1 `S1110 1 . 1 0 `S1113 1 . 1 0 `S1120 1 . 1 0 `S1126 1 . 1 0 ]
+"35844
+"35844
+[v _T1CONbits T1CONbits `VES1131  1 e 1 @4045 ]
+"35921
+[v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
+"35941
+[v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
+[s S206 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"36009
+[s S208 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+"36009
+[s S211 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+"36009
+[s S214 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+"36009
+[s S217 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+"36009
+[s S220 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_CM 1 0 :1:5 
+]
+"36009
+[s S223 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 nCM 1 0 :1:5 
+`uc 1 SBOREN 1 0 :1:6 
+`uc 1 IPEN 1 0 :1:7 
+]
+"36009
+[s S232 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+`uc 1 CM 1 0 :1:5 
+]
+"36009
+[u S239 . 1 `S206 1 . 1 0 `S208 1 . 1 0 `S211 1 . 1 0 `S214 1 . 1 0 `S217 1 . 1 0 `S220 1 . 1 0 `S223 1 . 1 0 `S232 1 . 1 0 ]
+"36009
+"36009
+[v _RCONbits RCONbits `VES239  1 e 1 @4048 ]
+"36174
+[v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
+"36246
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"36323
+[v _T0CON T0CON `VEuc  1 e 1 @4053 ]
+[s S1437 . 1 `uc 1 T0PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 T08BIT 1 0 :1:6 
+`uc 1 TMR0ON 1 0 :1:7 
+]
+"36343
+[s S1444 . 1 `uc 1 T0PS0 1 0 :1:0 
+`uc 1 T0PS1 1 0 :1:1 
+`uc 1 T0PS2 1 0 :1:2 
+]
+"36343
+[u S1448 . 1 `S1437 1 . 1 0 `S1444 1 . 1 0 ]
+"36343
+"36343
+[v _T0CONbits T0CONbits `VES1448  1 e 1 @4053 ]
+"36400
+[v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
+"36420
+[v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
+[s S403 . 1 `uc 1 INT1IF 1 0 :1:0 
+`uc 1 INT2IF 1 0 :1:1 
+`uc 1 INT3IF 1 0 :1:2 
+`uc 1 INT1IE 1 0 :1:3 
+`uc 1 INT2IE 1 0 :1:4 
+`uc 1 INT3IE 1 0 :1:5 
+`uc 1 INT1IP 1 0 :1:6 
+`uc 1 INT2IP 1 0 :1:7 
+]
+"37019
+[s S412 . 1 `uc 1 INT1F 1 0 :1:0 
+`uc 1 INT2F 1 0 :1:1 
+`uc 1 INT3F 1 0 :1:2 
+`uc 1 INT1E 1 0 :1:3 
+`uc 1 INT2E 1 0 :1:4 
+`uc 1 INT3E 1 0 :1:5 
+`uc 1 INT1P 1 0 :1:6 
+`uc 1 INT2P 1 0 :1:7 
+]
+"37019
+[u S421 . 1 `S403 1 . 1 0 `S412 1 . 1 0 ]
+"37019
+"37019
+[v _INTCON3bits INTCON3bits `VES421  1 e 1 @4080 ]
+[s S362 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+"37132
+[s S365 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 INT3IP 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 INTEDG3 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+"37132
+[s S374 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT3P 1 0 :1:1 
+`uc 1 T0IP 1 0 :1:2 
+`uc 1 . 1 0 :4:3 
+`uc 1 RBPU 1 0 :1:7 
+]
+"37132
+[u S380 . 1 `S362 1 . 1 0 `S365 1 . 1 0 `S374 1 . 1 0 ]
+"37132
+"37132
+[v _INTCON2bits INTCON2bits `VES380  1 e 1 @4081 ]
+[s S592 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"37234
+[s S601 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"37234
+[s S610 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+"37234
+[u S614 . 1 `S592 1 . 1 0 `S601 1 . 1 0 `S610 1 . 1 0 ]
+"37234
+"37234
+[v _INTCONbits INTCONbits `VES614  1 e 1 @4082 ]
+"40211
+"40211
+[v _LATE0 LATE0 `VEb  1 e 0 @31848 ]
+"40213
+[v _LATE1 LATE1 `VEb  1 e 0 @31849 ]
+"40215
+[v _LATE2 LATE2 `VEb  1 e 0 @31850 ]
+"40385
+[v _P1M1 P1M1 `VEb  1 e 0 @32223 ]
+"354 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
+[v _dpowers dpowers `C[5]ui  1 s 10 dpowers ]
+"57 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/ccp5.h
+[v _frequency frequency `VEui  1 e 2 0 ]
+"58
+[v _old_capture old_capture `VEui  1 e 2 0 ]
+"42 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/ext_int.c
+[v _INT1_InterruptHandler INT1_InterruptHandler `*.37(v  1 e 2 0 ]
+"43
+[v _INT0_InterruptHandler INT0_InterruptHandler `*.37(v  1 e 2 0 ]
+"57 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr0.c
+[v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
+"59
+[v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
+"60
+[v _count_m count_m `VEuc  1 e 1 0 ]
+"61
+[v _duration_m duration_m `VEuc  1 e 1 0 ]
+"62
+[v _out out `VEuc  1 e 1 0 ]
+"56 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEui  1 e 2 0 ]
+"57
+[v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
+"56 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr3.c
+[v _timer3ReloadVal timer3ReloadVal `VEui  1 e 2 0 ]
+"57
+[v _count_s count_s `VEuc  1 e 1 0 ]
+"58
+[v _duration_s duration_s `VEuc  1 e 1 0 ]
+"59
+[v _TMR3_InterruptHandler TMR3_InterruptHandler `*.37(v  1 e 2 0 ]
+"38 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\qsm/qsm.c
+[v _qsm_state qsm_state `E95  1 s 1 qsm_state ]
+[s S1745 qsm_queue_s 24 `uc 1 head 1 0 `uc 1 tail 1 1 `[20]uc 1 buffer 20 2 `uc 1 buffer_len 1 22 `E119 1 status 1 23 ]
+"39
+[v _qsm_queue qsm_queue `S1745  1 s 24 qsm_queue ]
+"42
+[v _mode mode `E86  1 s 1 mode ]
+"43
+[v _weight_flag weight_flag `E90  1 s 1 weight_flag ]
+[s S1768 qsm_lookup_table_e 23 `E109 1 event 1 0 `[11]*.37(v 1 event_handler 22 1 ]
+"76
+[v _qsm_lookup_table qsm_lookup_table `C[7]S1768  1 e 161 0 ]
+"57 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"101
+} 0
+"12 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\motordriver.c
+[v _motor_off motor_off `(v  1 e 1 0 ]
+{
+"14
+} 0
+"3 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\capture_tb.c
+[v _capture_tb capture_tb `(v  1 e 1 0 ]
+{
+"7
+} 0
+"464 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"528
+[v printf@val val `ui  1 a 2 21 ]
+"466
+[v printf@ap ap `[1]*.39v  1 a 2 18 ]
+"499
+[v printf@c c `c  1 a 1 23 ]
+"508
+[v printf@flag flag `uc  1 a 1 20 ]
+"506
+[v printf@prec prec `c  1 a 1 17 ]
+"464
+[v printf@f f `*.32Cuc  1 p 2 12 ]
+"1541
+} 0
+"111 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/eusart1.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@txData txData `uc  1 a 1 wreg ]
+[v putch@txData txData `uc  1 a 1 wreg ]
+"113
+[v putch@txData txData `uc  1 a 1 1 ]
+"114
+} 0
+"97
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+{
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 0 ]
+"104
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwmod@counter counter `uc  1 a 1 11 ]
+"8
+[v ___lwmod@dividend dividend `ui  1 p 2 7 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 9 ]
+"26
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 4 ]
+"8
+[v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
+"31
+} 0
+"105 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/ccp5.c
+[v _get_frequency get_frequency `(ui  1 e 2 0 ]
+{
+"107
+} 0
+"111 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"126
+} 0
+"65 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr3.c
+[v _TMR3_Initialize TMR3_Initialize `(v  1 e 1 0 ]
+{
+"95
+} 0
+"103
+[v _TMR3_StopTimer TMR3_StopTimer `(v  1 e 1 0 ]
+{
+"107
+} 0
+"192
+[v _TMR3_SetInterruptHandler TMR3_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR3_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"194
+} 0
+"61 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"79
+} 0
+"81
+[v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 1 0 ]
+{
+"85
+} 0
+"63 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"93
+} 0
+"95
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
+{
+"99
+} 0
+"190
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"192
+} 0
+"69 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+{
+"96
+} 0
+"104
+[v _TMR0_StopTimer TMR0_StopTimer `(v  1 e 1 0 ]
+{
+"108
+} 0
+"166
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"168
+} 0
+"52 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"88
+} 0
+"128 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"138
+} 0
+"51 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"79
+} 0
+"139 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/ext_int.c
+[v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
+{
+"167
+} 0
+"76
+[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"78
+} 0
+"118
+[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"120
+} 0
+"55 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+{
+"74
+} 0
+"63 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/epwm1.c
+[v _EPWM1_Initialize EPWM1_Initialize `(v  1 e 1 0 ]
+{
+"88
+} 0
+"59 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/ccp5.c
+[v _CCP5_Initialize CCP5_Initialize `(v  1 e 1 0 ]
+{
+"80
+} 0
+"58 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+{
+"79
+} 0
+"81 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManagerHigh INTERRUPT_InterruptManagerHigh `II(v  1 e 1 0 ]
+{
+"116
+} 0
+"162 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr3.c
+[v _TMR3_ISR TMR3_ISR `(v  1 e 1 0 ]
+{
+"164
+[v TMR3_ISR@CountCallBack CountCallBack `VEui  1 s 2 CountCallBack ]
+"181
+} 0
+"183
+[v _TMR3_CallBack TMR3_CallBack `(v  1 e 1 0 ]
+{
+"190
+} 0
+"196
+[v _TMR3_DefaultInterruptHandler TMR3_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"198
+} 0
+"160 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr1.c
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+{
+"162
+[v TMR1_ISR@CountCallBack CountCallBack `VEui  1 s 2 CountCallBack ]
+"179
+} 0
+"181
+[v _TMR1_CallBack TMR1_CallBack `(v  1 e 1 0 ]
+{
+"188
+} 0
+"194
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"242
+} 0
+"133 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr0.c
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+{
+"135
+[v TMR0_ISR@CountCallBack CountCallBack `VEui  1 s 2 CountCallBack ]
+"154
+} 0
+"156
+[v _TMR0_CallBack TMR0_CallBack `(v  1 e 1 0 ]
+{
+"164
+} 0
+"170
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"178
+} 0
+"104
+[v i2_TMR0_StopTimer TMR0_StopTimer `(v  1 e 1 0 ]
+{
+"108
+} 0
+"185
+[v _set_count_m set_count_m `(v  1 e 1 0 ]
+{
+[v set_count_m@val val `uc  1 a 1 wreg ]
+[v set_count_m@val val `uc  1 a 1 wreg ]
+[v set_count_m@val val `uc  1 a 1 0 ]
+"187
+} 0
+"126
+[v _TMR0_Reload TMR0_Reload `(v  1 e 1 0 ]
+{
+"130
+} 0
+"48 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/ext_int.c
+[v _INT1_ISR INT1_ISR `(v  1 e 1 0 ]
+{
+"59
+} 0
+"64
+[v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
+{
+"71
+} 0
+"83
+[v _INT1_DefaultInterruptHandler INT1_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"86
+} 0
+"90
+[v _INT0_ISR INT0_ISR `(v  1 e 1 0 ]
+{
+"101
+} 0
+"106
+[v _INT0_CallBack INT0_CallBack `(v  1 e 1 0 ]
+{
+"113
+} 0
+"125
+[v _INT0_DefaultInterruptHandler INT0_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"128
+} 0
+"82 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/ccp5.c
+[v _CCP5_CaptureISR CCP5_CaptureISR `(v  1 e 1 0 ]
+{
+[s S2284 . 2 `uc 1 ccpr5l 1 0 `uc 1 ccpr5h 1 1 ]
+"84
+[s S2287 . 2 `ui 1 ccpr5_16Bit 2 0 ]
+[u S2289 CCPR5Reg_tag 2 `S2284 1 . 2 0 `S2287 1 . 2 0 ]
+[v CCP5_CaptureISR@module module `S2289  1 a 2 4 ]
+"95
+} 0
+"97
+[v _CCP5_CallBack CCP5_CallBack `(v  1 e 1 0 ]
+{
+[v CCP5_CallBack@capturedValue capturedValue `ui  1 p 2 0 ]
+"103
+} 0
+"128 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/adc.c
+[v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]
+{
+"159
+} 0
+"201 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/tmr0.c
+[v _set_out set_out `(v  1 e 1 0 ]
+{
+[v set_out@val val `uc  1 a 1 wreg ]
+[v set_out@val val `uc  1 a 1 wreg ]
+[v set_out@val val `uc  1 a 1 0 ]
+"203
+} 0
+"98 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\qsm/qsm.c
+[v _qsm_post_event qsm_post_event `(E15159  1 e 1 0 ]
+{
+[v qsm_post_event@event event `E109  1 a 1 wreg ]
+[v qsm_post_event@event event `E109  1 a 1 wreg ]
+"100
+[v qsm_post_event@event event `E109  1 a 1 18 ]
+"105
+} 0
+"85 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\qsm/qsm_queue.c
+[v _qsm_queue_put qsm_queue_put `(E119  1 e 1 0 ]
+{
+[s S1745 qsm_queue_s 24 `uc 1 head 1 0 `uc 1 tail 1 1 `[20]uc 1 buffer 20 2 `uc 1 buffer_len 1 22 `E119 1 status 1 23 ]
+[v qsm_queue_put@b b `*.39S1745  1 p 2 13 ]
+[v qsm_queue_put@data_byte data_byte `uc  1 p 1 15 ]
+"100
+} 0
+"48
+[v _qsm_queue_isfull qsm_queue_isfull `(uc  1 s 1 qsm_queue_isfull ]
+{
+[s S1745 qsm_queue_s 24 `uc 1 head 1 0 `uc 1 tail 1 1 `[20]uc 1 buffer 20 2 `uc 1 buffer_len 1 22 `E119 1 status 1 23 ]
+[v qsm_queue_isfull@b b `*.39CS1745  1 p 2 7 ]
+"51
+} 0
+"39
+[v _qsm_queue_count qsm_queue_count `(uc  1 s 1 qsm_queue_count ]
+{
+[s S1745 qsm_queue_s 24 `uc 1 head 1 0 `uc 1 tail 1 1 `[20]uc 1 buffer 20 2 `uc 1 buffer_len 1 22 `E119 1 status 1 23 ]
+[v qsm_queue_count@b b `*.39CS1745  1 p 2 0 ]
+"42
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+{
+[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
+"6
+[v ___lbmod@rem rem `uc  1 a 1 3 ]
+"7
+[v ___lbmod@counter counter `uc  1 a 1 2 ]
+"4
+[v ___lbmod@dividend dividend `uc  1 a 1 wreg ]
+[v ___lbmod@divisor divisor `uc  1 p 1 0 ]
+"9
+[v ___lbmod@dividend dividend `uc  1 a 1 1 ]
+"18
+} 0
+"107 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\qsm/qsm.c
+[v _qsm_get_state qsm_get_state `(E15098  1 e 1 0 ]
+{
+"110
+} 0
+"100 C:\Users\a19356\MPLABXProjects\Project_1_Washing_Machine\Proj_1_FSM.X\mcc_generated_files/adc.c
+[v _ADC_GetConversionResult ADC_GetConversionResult `(ui  1 e 2 0 ]
+{
+"104
+} 0

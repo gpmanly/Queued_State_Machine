@@ -1,0 +1,220 @@
+
+# 1 "qsm/qsm_queue.c"
+
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 38
+typedef signed long int int32_t;
+
+# 45
+typedef unsigned char uint8_t;
+
+# 51
+typedef unsigned int uint16_t;
+
+# 67
+typedef unsigned long int uint32_t;
+
+# 75
+typedef signed char int_least8_t;
+
+# 82
+typedef signed int int_least16_t;
+
+# 104
+typedef signed long int int_least32_t;
+
+# 111
+typedef unsigned char uint_least8_t;
+
+# 117
+typedef unsigned int uint_least16_t;
+
+# 136
+typedef unsigned long int uint_least32_t;
+
+# 145
+typedef signed char int_fast8_t;
+
+# 152
+typedef signed int int_fast16_t;
+
+# 174
+typedef signed long int int_fast32_t;
+
+# 181
+typedef unsigned char uint_fast8_t;
+
+# 187
+typedef unsigned int uint_fast16_t;
+
+# 206
+typedef unsigned long int uint_fast32_t;
+
+# 212
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
+typedef unsigned char bool;
+
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\__size_t.h"
+typedef unsigned size_t;
+
+# 14 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+# 36
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+
+# 32 "qsm/qsm_queue.h"
+typedef enum qsm_queue_resp_e
+{
+QSM_QUEUE_OK = 0,
+QSM_QUEUE_EMPTY,
+QSM_QUEUE_FULL,
+} qsm_queue_resp_t;
+
+
+typedef struct qsm_queue_s
+{
+uint8_t head;
+uint8_t tail;
+uint8_t buffer[20];
+uint8_t buffer_len;
+qsm_queue_resp_t status;
+} qsm_queue_t;
+
+void qsm_queue_init( qsm_queue_t* b);
+void qsm_queue_reset( qsm_queue_t * b);
+qsm_queue_resp_t qsm_queue_get( qsm_queue_t * b, uint8_t* byte_out);
+qsm_queue_resp_t qsm_queue_put( qsm_queue_t * b, uint8_t data_byte);
+
+# 39 "qsm/qsm_queue.c"
+static uint8_t qsm_queue_count ( qsm_queue_t const *b)
+{
+return (b ? (b->head - b->tail) : 0);
+}
+
+# 48
+static bool qsm_queue_isfull ( qsm_queue_t const *b)
+{
+return (b ? (qsm_queue_count(b) == b->buffer_len) : 1);
+}
+
+# 57
+static bool qsm_queue_isempty( qsm_queue_t const *b)
+{
+return (b ? (qsm_queue_count(b) == 0) : 1);
+}
+
+# 66
+qsm_queue_resp_t qsm_queue_get( qsm_queue_t* b, uint8_t* byte_out)
+{
+if (!qsm_queue_isempty(b))
+{
+*byte_out = b->buffer[b->tail % b->buffer_len];
+b->tail++;
+b->status = QSM_QUEUE_OK;
+}
+else
+{
+b->status = QSM_QUEUE_EMPTY;
+}
+return b->status;
+}
+
+# 85
+qsm_queue_resp_t qsm_queue_put( qsm_queue_t* b, uint8_t data_byte)
+{
+if (b)
+{
+if (!qsm_queue_isfull(b))
+{
+b->buffer[b->head % b->buffer_len] = data_byte;
+b->head++;
+b->status = QSM_QUEUE_OK;
+} else
+{
+b->status = QSM_QUEUE_FULL;
+}
+}
+return b->status;
+}
+
+# 106
+void qsm_queue_reset( qsm_queue_t * b)
+{
+if (b)
+{
+b->head = 0;
+b->tail = 0;
+b->status = QSM_QUEUE_OK;
+}
+return;
+}
+
+# 121
+void qsm_queue_init( qsm_queue_t* b )
+{
+if (b)
+{
+b->head = 0;
+b->tail = 0;
+b->buffer_len = 20;
+b->status = QSM_QUEUE_OK;
+memset((void*) b->buffer, 0x00, 20);
+}
+return;
+}
+
+# 137
+static qsm_queue_resp_t qsm_queue_get_status( qsm_queue_t const *b )
+{
+return b->status;
+}
+

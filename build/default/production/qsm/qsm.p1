@@ -1,0 +1,584 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"38 qsm/qsm.c
+[c E95 0 1 2 3 4 5 6 7 8 9 10 11 .. ]
+[n E95 huvent_state_e WM_STATE_IDLE WM_STATE_MODE_WASH WM_STATE_MODE_DRAIN WM_STATE_WEIGHING WM_STATE_MODE_LIGHT WM_STATE_MODE_NORMAL WM_STATE_MODE_HEAVY WM_STATE_WASHING WM_STATE_DRAINING WM_STATE_FAULT WM_STATE_DONE QSM_STATE_MAX  ]
+"39
+[c E119 0 1 2 .. ]
+[n E119 qsm_queue_resp_e QSM_QUEUE_OK QSM_QUEUE_EMPTY QSM_QUEUE_FULL  ]
+"40 qsm/qsm_queue.h
+[s S2 `uc 1 `uc 1 `uc -> 20 `i `uc 1 `E119 1 ]
+[n S2 qsm_queue_s head tail buffer buffer_len status ]
+"42 qsm/qsm.c
+[c E86 0 1 .. ]
+[n E86 . FLAG_WASH FLAG_DRAIN  ]
+"43
+[c E90 0 1 2 .. ]
+[n E90 . FLAG_LIGHT FLAG_NORMAL FLAG_HEAVY  ]
+"76
+[c E109 0 1 2 3 4 5 6 7 .. ]
+[n E109 huvent_e WM_EVENT_INIT WM_EVENT_BUTTON_OK WM_EVENT_BUTTON_UP WM_EVENT_LOAD_SENSE WM_EVENT_WATER_LEVEL_SENSE WM_EVENT_FAULT_SENSE WM_EVENT_TIMER_DONE QSM_EVENT_MAX  ]
+[v F188 `(v ~T0 @X0 0 tf ]
+"46
+[s S3 `E109 1 `*F188 . `E95 11 ]
+[n S3 qsm_lookup_table_e event event_handler ]
+"34 qsm/qsm_event_handler.h
+[v _WM_HANDLER_INIT `(v ~T0 @X0 0 ef ]
+"35
+[v _WM_HANDLER_NONE `(v ~T0 @X0 0 ef ]
+"37
+[v _WM_HANDLER_START_WEIGHING `(v ~T0 @X0 0 ef ]
+"44
+[v _WM_HANDLER_START_RUNNING `(v ~T0 @X0 0 ef ]
+"36
+[v _WM_HANDLER_TOGGLE_MODE `(v ~T0 @X0 0 ef ]
+"38
+[v _WM_HANDLER_LOAD_SENSE `(v ~T0 @X0 0 ef ]
+"39
+[v _WM_HANDLER_WATER_LEVEL_SENSE `(v ~T0 @X0 0 ef ]
+"40
+[v _WM_HANDLER_FAULT_SENSE `(v ~T0 @X0 0 ef ]
+"41
+[v _WM_HANDLER_TIMER_DONE `(v ~T0 @X0 0 ef ]
+"49 qsm/qsm_queue.h
+[v _qsm_queue_init `(v ~T0 @X0 0 ef1`*S2 ]
+"50
+[v _qsm_queue_reset `(v ~T0 @X0 0 ef1`*S2 ]
+"99 qsm/qsm.c
+[c E141 0 1 .. ]
+[n E141 qsm_resp_s QSM_OK QSM_FULL  ]
+"52 qsm/qsm_queue.h
+[v _qsm_queue_put `(E119 ~T0 @X0 0 ef2`*S2`uc ]
+"51
+[v _qsm_queue_get `(E119 ~T0 @X0 0 ef2`*S2`*uc ]
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 38: typedef signed long int int32_t;
+[; ;stdint.h: 45: typedef unsigned char uint8_t;
+[; ;stdint.h: 51: typedef unsigned int uint16_t;
+[; ;stdint.h: 67: typedef unsigned long int uint32_t;
+[; ;stdint.h: 75: typedef signed char int_least8_t;
+[; ;stdint.h: 82: typedef signed int int_least16_t;
+[; ;stdint.h: 104: typedef signed long int int_least32_t;
+[; ;stdint.h: 111: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 117: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 136: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 145: typedef signed char int_fast8_t;
+[; ;stdint.h: 152: typedef signed int int_fast16_t;
+[; ;stdint.h: 174: typedef signed long int int_fast32_t;
+[; ;stdint.h: 181: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 187: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 206: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 212: typedef int32_t intmax_t;
+[; ;stdint.h: 217: typedef uint32_t uintmax_t;
+[; ;stdint.h: 222: typedef int16_t intptr_t;
+[; ;stdint.h: 227: typedef uint16_t uintptr_t;
+[; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+[; ;qsm_config.h: 40: typedef enum {
+[; ;qsm_config.h: 41: FLAG_WASH,
+[; ;qsm_config.h: 42: FLAG_DRAIN
+[; ;qsm_config.h: 43: }mode_operation_t;
+[; ;qsm_config.h: 45: typedef enum {
+[; ;qsm_config.h: 46: FLAG_LIGHT,
+[; ;qsm_config.h: 47: FLAG_NORMAL,
+[; ;qsm_config.h: 48: FLAG_HEAVY
+[; ;qsm_config.h: 49: }weight_flag_t;
+[; ;qsm_config.h: 54: typedef enum huvent_state_e
+[; ;qsm_config.h: 55: {
+[; ;qsm_config.h: 56: WM_STATE_IDLE = 0,
+[; ;qsm_config.h: 58: WM_STATE_MODE_WASH,
+[; ;qsm_config.h: 60: WM_STATE_MODE_DRAIN,
+[; ;qsm_config.h: 62: WM_STATE_WEIGHING,
+[; ;qsm_config.h: 64: WM_STATE_MODE_LIGHT,
+[; ;qsm_config.h: 66: WM_STATE_MODE_NORMAL,
+[; ;qsm_config.h: 68: WM_STATE_MODE_HEAVY,
+[; ;qsm_config.h: 70: WM_STATE_WASHING,
+[; ;qsm_config.h: 72: WM_STATE_DRAINING,
+[; ;qsm_config.h: 74: WM_STATE_FAULT,
+[; ;qsm_config.h: 76: WM_STATE_DONE,
+[; ;qsm_config.h: 79: QSM_STATE_MAX
+[; ;qsm_config.h: 81: } qsm_state_t;
+[; ;qsm_config.h: 84: typedef enum huvent_e
+[; ;qsm_config.h: 85: {
+[; ;qsm_config.h: 86: WM_EVENT_INIT = 0,
+[; ;qsm_config.h: 88: WM_EVENT_BUTTON_OK,
+[; ;qsm_config.h: 90: WM_EVENT_BUTTON_UP,
+[; ;qsm_config.h: 92: WM_EVENT_LOAD_SENSE,
+[; ;qsm_config.h: 94: WM_EVENT_WATER_LEVEL_SENSE,
+[; ;qsm_config.h: 96: WM_EVENT_FAULT_SENSE,
+[; ;qsm_config.h: 98: WM_EVENT_TIMER_DONE,
+[; ;qsm_config.h: 101: QSM_EVENT_MAX
+[; ;qsm_config.h: 102: } qsm_event_t;
+[; ;qsm_queue.h: 32: typedef enum qsm_queue_resp_e
+[; ;qsm_queue.h: 33: {
+[; ;qsm_queue.h: 34: QSM_QUEUE_OK = 0,
+[; ;qsm_queue.h: 35: QSM_QUEUE_EMPTY,
+[; ;qsm_queue.h: 36: QSM_QUEUE_FULL,
+[; ;qsm_queue.h: 37: } qsm_queue_resp_t;
+[; ;qsm_queue.h: 40: typedef struct qsm_queue_s
+[; ;qsm_queue.h: 41: {
+[; ;qsm_queue.h: 42: uint8_t head;
+[; ;qsm_queue.h: 43: uint8_t tail;
+[; ;qsm_queue.h: 44: uint8_t buffer[20];
+[; ;qsm_queue.h: 45: uint8_t buffer_len;
+[; ;qsm_queue.h: 46: qsm_queue_resp_t status;
+[; ;qsm_queue.h: 47: } qsm_queue_t;
+[; ;qsm_queue.h: 49: void qsm_queue_init( qsm_queue_t* b);
+[; ;qsm_queue.h: 50: void qsm_queue_reset( qsm_queue_t * b);
+[; ;qsm_queue.h: 51: qsm_queue_resp_t qsm_queue_get( qsm_queue_t * b, uint8_t* byte_out);
+[; ;qsm_queue.h: 52: qsm_queue_resp_t qsm_queue_put( qsm_queue_t * b, uint8_t data_byte);
+[; ;qsm.h: 32: typedef enum qsm_resp_s
+[; ;qsm.h: 33: {
+[; ;qsm.h: 34: QSM_OK = 0,
+[; ;qsm.h: 35: QSM_FULL,
+[; ;qsm.h: 36: } qsm_resp_t;
+[; ;qsm.h: 38: void qsm_init(void);
+[; ;qsm.h: 39: void qsm_engine(void);
+[; ;qsm.h: 41: qsm_resp_t qsm_post_event( qsm_event_t event);
+[; ;qsm.h: 43: qsm_state_t qsm_get_state( void );
+[; ;qsm.h: 45: void qsm_set_state( qsm_state_t new_state );
+[; ;qsm.h: 49: mode_operation_t get_mode (void);
+[; ;qsm.h: 51: void set_mode (mode_operation_t new_mode);
+[; ;qsm.h: 53: weight_flag_t get_weight_flag (void);
+[; ;qsm.h: 55: void set_weight_flag (weight_flag_t new_weight_flag);
+[; ;qsm_event_handler.h: 34: void WM_HANDLER_INIT(void);
+[; ;qsm_event_handler.h: 35: void WM_HANDLER_NONE(void);
+[; ;qsm_event_handler.h: 36: void WM_HANDLER_TOGGLE_MODE(void);
+[; ;qsm_event_handler.h: 37: void WM_HANDLER_START_WEIGHING(void);
+[; ;qsm_event_handler.h: 38: void WM_HANDLER_LOAD_SENSE(void);
+[; ;qsm_event_handler.h: 39: void WM_HANDLER_WATER_LEVEL_SENSE(void);
+[; ;qsm_event_handler.h: 40: void WM_HANDLER_FAULT_SENSE(void);
+[; ;qsm_event_handler.h: 41: void WM_HANDLER_TIMER_DONE(void);
+[; ;qsm_event_handler.h: 44: void WM_HANDLER_START_RUNNING(void);
+"38 qsm/qsm.c
+[v _qsm_state `E95 ~T0 @X0 1 s ]
+[i _qsm_state
+. `E95 0
+]
+[; ;qsm.c: 38: static qsm_state_t qsm_state = WM_STATE_IDLE;
+"39
+[v _qsm_queue `S2 ~T0 @X0 1 s ]
+[; ;qsm.c: 39: static qsm_queue_t qsm_queue;
+"42
+[v _mode `E86 ~T0 @X0 1 s ]
+[i _mode
+. `E86 0
+]
+[; ;qsm.c: 42: static mode_operation_t mode = FLAG_WASH;
+"43
+[v _weight_flag `E90 ~T0 @X0 1 s ]
+[i _weight_flag
+. `E90 0
+]
+[; ;qsm.c: 43: static weight_flag_t weight_flag = FLAG_LIGHT;
+[; ;qsm.c: 46: typedef struct qsm_lookup_table_e
+[; ;qsm.c: 47: {
+[; ;qsm.c: 48: qsm_event_t event;
+[; ;qsm.c: 53: void (*event_handler[QSM_STATE_MAX]) ();
+[; ;qsm.c: 54: } qsm_lookup_table_t;
+"76
+[v _qsm_lookup_table `CS3 ~T0 @X0 -> 0 `x e ]
+[i _qsm_lookup_table
+:U ..
+:U ..
+"82
+. `E109 0
+:U ..
+&U _WM_HANDLER_INIT
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+..
+..
+:U ..
+"83
+. `E109 1
+:U ..
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_START_WEIGHING
+&U _WM_HANDLER_START_WEIGHING
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_START_RUNNING
+&U _WM_HANDLER_START_RUNNING
+&U _WM_HANDLER_START_RUNNING
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_START_RUNNING
+&U _WM_HANDLER_INIT
+..
+..
+:U ..
+"84
+. `E109 2
+:U ..
+&U _WM_HANDLER_TOGGLE_MODE
+&U _WM_HANDLER_TOGGLE_MODE
+&U _WM_HANDLER_TOGGLE_MODE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+..
+..
+:U ..
+"85
+. `E109 3
+:U ..
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_LOAD_SENSE
+&U _WM_HANDLER_LOAD_SENSE
+&U _WM_HANDLER_LOAD_SENSE
+&U _WM_HANDLER_LOAD_SENSE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+..
+..
+:U ..
+"86
+. `E109 4
+:U ..
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_WATER_LEVEL_SENSE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+..
+..
+:U ..
+"87
+. `E109 5
+:U ..
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_FAULT_SENSE
+&U _WM_HANDLER_FAULT_SENSE
+&U _WM_HANDLER_FAULT_SENSE
+&U _WM_HANDLER_NONE
+..
+..
+:U ..
+"88
+. `E109 6
+:U ..
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_TIMER_DONE
+&U _WM_HANDLER_TIMER_DONE
+&U _WM_HANDLER_NONE
+&U _WM_HANDLER_NONE
+..
+..
+..
+]
+[; ;qsm.c: 76: const qsm_lookup_table_t qsm_lookup_table [] =
+[; ;qsm.c: 77: {
+[; ;qsm.c: 82: {WM_EVENT_INIT, {WM_HANDLER_INIT, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE} },
+[; ;qsm.c: 83: {WM_EVENT_BUTTON_OK, {WM_HANDLER_NONE, WM_HANDLER_START_WEIGHING, WM_HANDLER_START_WEIGHING, WM_HANDLER_NONE, WM_HANDLER_START_RUNNING, WM_HANDLER_START_RUNNING, WM_HANDLER_START_RUNNING, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_START_RUNNING, WM
+[; ;qsm.c: 84: {WM_EVENT_BUTTON_UP, {WM_HANDLER_TOGGLE_MODE, WM_HANDLER_TOGGLE_MODE, WM_HANDLER_TOGGLE_MODE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE} },
+[; ;qsm.c: 85: {WM_EVENT_LOAD_SENSE, {WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_LOAD_SENSE, WM_HANDLER_LOAD_SENSE, WM_HANDLER_LOAD_SENSE, WM_HANDLER_LOAD_SENSE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE} },
+[; ;qsm.c: 86: {WM_EVENT_WATER_LEVEL_SENSE,{WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_WATER_LEVEL_SENSE, WM_HANDLER_NONE, WM_HANDLER_NONE} },
+[; ;qsm.c: 87: {WM_EVENT_FAULT_SENSE, {WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_FAULT_SENSE, WM_HANDLER_FAULT_SENSE, WM_HANDLER_FAULT_SENSE, WM_HANDLER_NONE} },
+[; ;qsm.c: 88: {WM_EVENT_TIMER_DONE, {WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_NONE, WM_HANDLER_TIMER_DONE, WM_HANDLER_TIMER_DONE, WM_HANDLER_NONE, WM_HANDLER_NONE} }
+[; ;qsm.c: 89: };
+"91
+[v _qsm_init `(v ~T0 @X0 1 ef ]
+"92
+{
+[; ;qsm.c: 91: void qsm_init(void)
+[; ;qsm.c: 92: {
+[e :U _qsm_init ]
+[f ]
+[; ;qsm.c: 93: qsm_queue_init( &qsm_queue );
+"93
+[e ( _qsm_queue_init (1 &U _qsm_queue ]
+[; ;qsm.c: 94: qsm_queue_reset( &qsm_queue );
+"94
+[e ( _qsm_queue_reset (1 &U _qsm_queue ]
+[; ;qsm.c: 95: qsm_state = WM_STATE_IDLE;
+"95
+[e = _qsm_state . `E95 0 ]
+[; ;qsm.c: 96: }
+"96
+[e :UE 4 ]
+}
+"98
+[v _qsm_post_event `(E141 ~T0 @X0 1 ef1`E109 ]
+"99
+{
+[; ;qsm.c: 98: qsm_resp_t qsm_post_event( qsm_event_t event)
+[; ;qsm.c: 99: {
+[e :U _qsm_post_event ]
+"98
+[v _event `E109 ~T0 @X0 1 r1 ]
+"99
+[f ]
+[; ;qsm.c: 100: if( QSM_QUEUE_OK != qsm_queue_put( &qsm_queue, event ) )
+"100
+[e $ ! != -> . `E119 0 `i -> ( _qsm_queue_put (2 , &U _qsm_queue -> _event `uc `i 6  ]
+[; ;qsm.c: 101: {
+"101
+{
+[; ;qsm.c: 102: return QSM_FULL;
+"102
+[e ) . `E141 1 ]
+[e $UE 5  ]
+"103
+}
+[e :U 6 ]
+[; ;qsm.c: 103: }
+[; ;qsm.c: 104: return QSM_OK;
+"104
+[e ) . `E141 0 ]
+[e $UE 5  ]
+[; ;qsm.c: 105: }
+"105
+[e :UE 5 ]
+}
+"107
+[v _qsm_get_state `(E95 ~T0 @X0 1 ef ]
+"108
+{
+[; ;qsm.c: 107: qsm_state_t qsm_get_state( void )
+[; ;qsm.c: 108: {
+[e :U _qsm_get_state ]
+[f ]
+[; ;qsm.c: 109: return qsm_state;
+"109
+[e ) _qsm_state ]
+[e $UE 7  ]
+[; ;qsm.c: 110: }
+"110
+[e :UE 7 ]
+}
+"112
+[v _qsm_set_state `(v ~T0 @X0 1 ef1`E95 ]
+"113
+{
+[; ;qsm.c: 112: void qsm_set_state( qsm_state_t new_state )
+[; ;qsm.c: 113: {
+[e :U _qsm_set_state ]
+"112
+[v _new_state `E95 ~T0 @X0 1 r1 ]
+"113
+[f ]
+[; ;qsm.c: 114: qsm_state = new_state;
+"114
+[e = _qsm_state _new_state ]
+[; ;qsm.c: 115: return;
+"115
+[e $UE 8  ]
+[; ;qsm.c: 116: }
+"116
+[e :UE 8 ]
+}
+"122
+[v _qsm_engine `(v ~T0 @X0 1 ef ]
+"123
+{
+[; ;qsm.c: 122: void qsm_engine(void)
+[; ;qsm.c: 123: {
+[e :U _qsm_engine ]
+[f ]
+"124
+[v _event `E109 ~T0 @X0 1 a ]
+[; ;qsm.c: 124: qsm_event_t event = WM_STATE_IDLE;
+[e = _event . `E95 0 ]
+"125
+[v _resp `E119 ~T0 @X0 1 a ]
+[; ;qsm.c: 125: qsm_queue_resp_t resp = QSM_QUEUE_OK;
+[e = _resp . `E119 0 ]
+[; ;qsm.c: 127: resp = qsm_queue_get( &qsm_queue, (uint8_t*) &event);
+"127
+[e = _resp ( _qsm_queue_get (2 , &U _qsm_queue -> &U _event `*uc ]
+[; ;qsm.c: 134: switch(resp)
+"134
+[e $U 11  ]
+[; ;qsm.c: 135: {
+"135
+{
+[; ;qsm.c: 136: case QSM_QUEUE_OK:
+"136
+[e :U 12 ]
+[; ;qsm.c: 137: {
+"137
+{
+[; ;qsm.c: 138: qsm_lookup_table[event].event_handler[qsm_state]();
+"138
+[e ( *U *U + &U . *U + &U _qsm_lookup_table * -> _event `ux -> -> # *U &U _qsm_lookup_table `ui `ux 1 * -> _qsm_state `ux -> -> # *U &U . *U + &U _qsm_lookup_table * -> _event `ux -> -> # *U &U _qsm_lookup_table `ui `ux 1 `ui `ux ..  ]
+[; ;qsm.c: 139: break;
+"139
+[e $U 10  ]
+"140
+}
+[; ;qsm.c: 140: }
+[; ;qsm.c: 141: case QSM_QUEUE_EMPTY:
+"141
+[e :U 13 ]
+[; ;qsm.c: 142: {
+"142
+{
+[; ;qsm.c: 144: break;
+"144
+[e $U 10  ]
+"145
+}
+[; ;qsm.c: 145: }
+[; ;qsm.c: 146: case QSM_QUEUE_FULL:
+"146
+[e :U 14 ]
+[; ;qsm.c: 147: default:
+"147
+[e :U 15 ]
+[; ;qsm.c: 148: {
+"148
+{
+[; ;qsm.c: 149: while(1);
+"149
+[e :U 17 ]
+[e :U 16 ]
+[e $U 17  ]
+[e :U 18 ]
+[; ;qsm.c: 150: break;
+"150
+[e $U 10  ]
+"151
+}
+"152
+}
+[; ;qsm.c: 151: }
+[; ;qsm.c: 152: }
+[e $U 10  ]
+"134
+[e :U 11 ]
+[e [\ _resp , $ . `E119 0 12
+ , $ . `E119 1 13
+ , $ . `E119 2 14
+ 15 ]
+"152
+[e :U 10 ]
+[; ;qsm.c: 153: }
+"153
+[e :UE 9 ]
+}
+"156
+[v _get_mode `(E86 ~T0 @X0 1 ef ]
+{
+[; ;qsm.c: 156: mode_operation_t get_mode (void){
+[e :U _get_mode ]
+[f ]
+[; ;qsm.c: 157: return mode;
+"157
+[e ) _mode ]
+[e $UE 19  ]
+[; ;qsm.c: 158: }
+"158
+[e :UE 19 ]
+}
+"160
+[v _set_mode `(v ~T0 @X0 1 ef1`E86 ]
+{
+[; ;qsm.c: 160: void set_mode (mode_operation_t new_mode){
+[e :U _set_mode ]
+[v _new_mode `E86 ~T0 @X0 1 r1 ]
+[f ]
+[; ;qsm.c: 161: mode = new_mode;
+"161
+[e = _mode _new_mode ]
+[; ;qsm.c: 162: return;
+"162
+[e $UE 20  ]
+[; ;qsm.c: 163: }
+"163
+[e :UE 20 ]
+}
+"165
+[v _get_weight_flag `(E90 ~T0 @X0 1 ef ]
+{
+[; ;qsm.c: 165: weight_flag_t get_weight_flag (void){
+[e :U _get_weight_flag ]
+[f ]
+[; ;qsm.c: 166: return weight_flag;
+"166
+[e ) _weight_flag ]
+[e $UE 21  ]
+[; ;qsm.c: 167: }
+"167
+[e :UE 21 ]
+}
+"169
+[v _set_weight_flag `(v ~T0 @X0 1 ef1`E90 ]
+{
+[; ;qsm.c: 169: void set_weight_flag (weight_flag_t new_weight_flag){
+[e :U _set_weight_flag ]
+[v _new_weight_flag `E90 ~T0 @X0 1 r1 ]
+[f ]
+[; ;qsm.c: 170: weight_flag = new_weight_flag;
+"170
+[e = _weight_flag _new_weight_flag ]
+[; ;qsm.c: 171: return;
+"171
+[e $UE 22  ]
+[; ;qsm.c: 172: }
+"172
+[e :UE 22 ]
+}
