@@ -88,15 +88,15 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-    //qsm_init();
-    //qsm_post_event(WM_EVENT_INIT);
+    qsm_init();
+    qsm_post_event(WM_EVENT_INIT);
     
     //motordriver_test();
     capture_tb();
 
     while (1)
     {
-        //qsm_engine();
+        qsm_engine();
     }
 }
 /**
